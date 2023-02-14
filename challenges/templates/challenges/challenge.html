@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static%}
+{%block style%}
+<link rel="stylesheet" href="{%static "challenges/includes/header.css"%}">
+<link rel="stylesheet" href="{%static "Challenges/challenge.css"%}">
+{%endblock%}
+   {%block title%}{{month|title}} challenge{%endblock%}
+{%block content%}
+{% include "challenges/includes/header.html"%}
+
+    <h1>{{month|title}} challenge</h1>
+    {%if text is not None%}
+    <h2>{{text}}</h2>
+    {% else %}
+    <p class="fallback">"this text is not a month supported format"</p>
+    {%endif%}
+{%endblock%}
